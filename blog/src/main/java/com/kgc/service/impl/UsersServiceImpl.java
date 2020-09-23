@@ -16,7 +16,7 @@ import java.util.List;
 
 @Service("usersService")
 public class UsersServiceImpl implements UsersService {
-@Resource
+    @Resource
     UsersMapper usersMapper;
     @Override
     public Users userLogin(String name) {
@@ -28,5 +28,13 @@ public class UsersServiceImpl implements UsersService {
             return  users.get(0);
         }
         return null;
+    }
+
+    @Override
+    public int ins(Users users) {
+        if(usersMapper.insert(users)>0){
+            return 1;
+        }
+        return 0;
     }
 }

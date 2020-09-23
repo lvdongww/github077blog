@@ -12,7 +12,7 @@
     <p>${username}你好,欢迎访问微博信息管理系统 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<sapn><a href="login.jsp">注销</a></sapn>
     </p>
     <a href="BG">微博管理</a>
-    <a href="adduser.jsp">添加用户</a>
+    <a href="/statics/jsp/adduser.jsp">添加用户</a>
     <table border="1px">
         <tr>
             <td colspan="5" style="text-align: center">微博首页

@@ -2,11 +2,13 @@ package com.kgc.controller;
 
 import com.kgc.pojo.Users;
 import com.kgc.service.UsersService;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author shkstart
@@ -21,13 +23,15 @@ public class LoginController {
         return "login";
     }
     @RequestMapping("userLogin")
-    public String tomain(String username, String password, Model model){
+    public String tomain(String username, String password, Model model,HttpSession session){
         Users users = usersService.userLogin(username);
         if (users==null){
             return "login";
         }else{
             if (users.getPassword().equals(password)) {
                model.addAttribute("username",username);
+               session.setAttribute("uid",users.getId());
+
             }else{
                 return "login";
             }

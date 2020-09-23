@@ -9,9 +9,10 @@
 <body style="background:url(/statics/img/微博背景.jpg)">
 <center>
     <a href="BG">返回</a>
-<form action="BG?prop=add" method="post">
+<form action="/ins" method="post">
 <p>微博内容
     <input type="text" name="content">
+    <input hidden name="uid" value="${uid}">
 </p>
 <p><input type="submit" value="发布"></p>
 

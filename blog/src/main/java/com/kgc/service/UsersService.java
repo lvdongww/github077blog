@@ -8,4 +8,5 @@ import com.kgc.pojo.Users;
  */
 public interface UsersService {
     Users userLogin(String name);
+    int ins(Users users);
 }

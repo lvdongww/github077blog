@@ -11,8 +11,8 @@
 <center>
     <p>${username},欢迎进入微博管理系统 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<sapn><a href="/">注销</a></sapn>
     </p>
-    <a href="US">用户管理</a>
-    <a href="add.jsp">发表微博</a>
+    <a href="/statics/jsp/user.jsp">用户管理</a>
+    <a href="/statics/jsp/add.jsp">发表微博</a>
     <table border="1px">
         <tr>
             <td>微博内容</td>
