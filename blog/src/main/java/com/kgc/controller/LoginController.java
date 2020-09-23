@@ -29,9 +29,9 @@ public class LoginController {
             return "login";
         }else{
             if (users.getPassword().equals(password)) {
-               model.addAttribute("username",username);
+               session.setAttribute("username",username);
                session.setAttribute("uid",users.getId());
-
+               session.setAttribute("supper",users.getSupper());
             }else{
                 return "login";
             }

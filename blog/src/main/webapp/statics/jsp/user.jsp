@@ -7,9 +7,10 @@
 <head>
     <title>用戶管理</title>
 </head>
+<script src="/statics/js/jquery-3.4.1.js"></script>
 <body style="background:url(/statics/img/微博背景.jpg)">
 <center>
-    <p>${username}你好,欢迎访问微博信息管理系统 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<sapn><a href="login.jsp">注销</a></sapn>
+    <p>${username}你好,欢迎访问微博信息管理系统 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<sapn><a href="/statics/jsp/login.jsp">注销</a></sapn>
     </p>
     <a href="BG">微博管理</a>
     <a href="/statics/jsp/adduser.jsp">添加用户</a>
@@ -24,29 +25,17 @@
             <td>地址</td>
             <td>操作</td>
         </tr>
-        <c:forEach items="${pageInfo.list}" var="user">
+        <c:forEach items="${pageInfo}" var="user">
             <tr>
                 <td>${user.username}</td>
                 <td>${user.nickname}</td>
                 <td>${user.mobile}</td>
                 <td>${user.address}</td>
-                <td><a href="US?prop=del&id=${user.id}">删除</a></td>
+                <td><a href="/deluser/${user.id}" onclick="del()">删除</a></td>
             </tr>
         </c:forEach>
     </table>
-    <div>
-        <a href="US?pageNum=${pageInfo.firstPage}">首页</a>
-        <c:if test="${pageInfo.hasPreviousPage}">
-            <a href="US?pageNum=${pageInfo.prePage}">上一页</a>
-        </c:if>
-        <c:forEach items="${pageInfo.navigatepageNums}" var="i">
-            <a href="US?pageNum=${i}">${i}</a>
-        </c:forEach>
-        <c:if test="${pageInfo.hasNextPage}">
-            <a href="US?pageNum=${pageInfo.nextPage}">下一页</a>
-        </c:if>
-        <a href="US?pageNum=${pageInfo.lastPage}">末页</a>
-    </div>
+    <p style="color: red">${msg}</p>
     <p style="margin-left: 220px;">
         <c:if test="${sessionScope.flag1==true}">
         <span style="color: red">
@@ -60,5 +49,15 @@
         </c:if>
     </p>
 </center>
+<script type="text/javascript">
+    function del() {
+        var xxx = "确定删除该用户吗?";
+        if (confirm(xxx) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

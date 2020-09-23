@@ -2,10 +2,12 @@ package com.kgc.service.impl;
 
 import com.kgc.mapper.BlogMapper;
 import com.kgc.pojo.Blog;
+import com.kgc.pojo.BlogExample;
 import com.kgc.service.BlogService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author shkstart

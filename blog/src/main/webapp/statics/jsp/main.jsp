@@ -11,7 +11,7 @@
 <center>
     <p>${username},欢迎进入微博管理系统 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<sapn><a href="/">注销</a></sapn>
     </p>
-    <a href="/statics/jsp/user.jsp">用户管理</a>
+    <a href="/userguanli">用户管理</a>
     <a href="/statics/jsp/add.jsp">发表微博</a>
     <table border="1px">
         <tr>
@@ -19,7 +19,7 @@
             <td>发布时间</td>
             <td>操作</td>
         </tr>
-        <c:forEach items="${pageInfo.list}" var="user">
+        <c:forEach items="${pageInfo}" var="user">
             <tr>
                 <td>${user.content}</td>
                 <td>${user.publishtime}</td>
@@ -27,6 +27,7 @@
             </tr>
         </c:forEach>
     </table>
+
     <div>
         <a href="BG?pageNum=${pageInfo.firstPage}">首页</a>
         <c:if test="${pageInfo.hasPreviousPage}">
